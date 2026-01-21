@@ -1,0 +1,168 @@
+---
+title: "DataSquad Assessment"
+subtitle: "Graphs and Insights from the 2025 Assessment"
+author: "Dashiell Coyier '29"
+date: "1/20/2026"
+toc: true
+format:
+  html:
+    lightbox: true
+    html-math-method: katex
+    code-tools: true
+    self-contained: true
+    # fig-align: center
+    css: styles.css
+execute:
+  warning: false
+---
+
+## Preface
+
+This webpage contains partial results and analysis from the 2025 DataSquad Assessment Project. For the complete preprint, please visit <https://arxiv.org/abs/2511.19688>.
+
+This is a Quarto document. To learn more about Quarto see <https://quarto.org>. Graphs enlarge on click.
+
+## Introduction
+
+A formal assessment of the DataSquad model, as implemented at Carleton College, first began in June 2025. Paula Lackie, Ryan Jiang '27, and Zaeda Peter '26 designed an assessment in Qualtrics to obtain input from DataSquad alumni and clients in order to reflect on the DataSquad model and refine it moving forward. The goal was to learn what both alumni and clients found beneficial, misaligned with industry standards, or otherwise effective/ineffective.
+
+To best understand the feedback, this webpage visualizes and discusses results question by question, in the same order as presented to those taking the assessment. First, alumni feedback will be shared, followed by client feedback.
+
+## Alumni Assessment
+
+<span> </span>
+
+<h4 class="qblock">
+  <span>Q1. What best describes your role within DataSquad?</span>
+</h4>
+When a new member joins the DataSquad, they are usually assigned to be a Technical Writer or a Programmer, depending on technical experience. The Technical Writer manages blog posts and documentation, while Programmers assist with specific projects. The remaining roles of Data Analyst (now referred to as Assistant/Lead Data Scientist) and Project Manager fill out the squad, with the Project Manager taking a leadership role.
+
+```{r}
+#| label: role-plot
+#| file: "Rcode/stacked_role_chart.R"
+#| echo: false
+#| fig-width: 14
+#| fig-height: 7
+#| fig-align: center
+#| out-width: "70%"
+#| warning: false
+#| message: false
+```
+
+We can see from the graph that the Programmer role is the standard role on the squad, with a majority of alumni having served in the role. On the other hand, the Project Manager, being held by only a single person at any time, has much lower representation. Movement between roles is common, with about a third of alumni having served in multiple positions.
+
+<br>
+
+<h4 class="qblock">
+  <span>Q2. Can you attribute any positive change in your skills in the following areas due to your work on the DataSquad?</span>
+  <span>Q3. How influential have these same skills been to your post‑college success?</span>
+  <span>Q4. Drawing from your post‑college experience, please choose the top four skill areas we should focus on for DataSquad member development.</span>
+</h4>
+These three questions bridge the gaps between experiences on the DataSquad, post-college experiences, and recommendations for the future of the DataSquad.
+
+```{r}
+#| label: combined-skill-plot
+#| file: "Rcode/combined_skill_career_top4_graph.R"
+#| echo: false
+#| fig-width: 21
+#| fig-height: 7
+#| fig-align: center
+#| out-width: "95%"
+#| warning: false
+#| message: false
+```
+
+There is a loose agreement between the results to these three questions; for example, technical documentation and knowledge sharing is the highest rated in all three, but other categories like project management have less correlation.
+
+Technical skills and soft skills are both valued: Teamwork is within the top three in all domains, DataSquad, post-DataSquad, and future. A clear leader among recommendations for the DataSquad's future focus is technical documentation and knowledge sharing, which suggests that not only are technical skills highly valued in the post-college landscape, but soft skills are also essential.
+
+<br>
+
+<h4 class="qblock">
+  <span>Q5. How did your DataSquad experience help you develop new skills beyond your Carleton coursework?</span>
+  <span>Q6. Which experiences or moments from your time on the DataSquad have stayed with you?</span>
+</h4>
+
+These two questions were the main *qualitative* questions in the assessment. When coding these responses, the two questions were viewed in tandem due to overlap.
+
+Three main categories arose during the coding process: (1) foundational experiences, formative events that shaped career trajectory or otherwise led to feelings of empowerment; (2) exposure to real-world data problems and situations that extend the classroom; and (3) growth in soft skills, like teamwork and presenting results to clients.
+
+```{r}
+#| label: qualitative-plot
+#| file: "Rcode/qualitative_themes.R"
+#| echo: false
+#| fig-width: 20
+#| fig-height: 12
+#| fig-align: center
+#| out-width: "85%"
+#| warning: false
+#| message: false
+```
+
+Among the 18 total responses, the main categories had high prevalence, with at least 14 responses containing the qualities of each main category.
+
+When looking at subcategory prevalence (the bars within each of the three main bars), certain topics may seem predictable, such as career relevance or technical skill growth, but other areas like client experience may be less obvious. In fact, one of the most common phrases among responses was "communicating technical knowledge to non-technical people." The diverse set of skills and meaningful experiences that alumni chose to discuss in these two questions highlights the breadth of exposure that the DataSquad provides.
+
+<br>
+
+<h4 class="qblock">
+  <span>Q7. Was the DataSquad a welcoming environment?</span>
+</h4>
+
+
+```{r}
+#| label: environment-plot
+#| file: "Rcode/ds_environment_graph.R"
+#| echo: false
+#| fig-width: 12
+#| fig-height: 7
+#| fig-align: center
+#| out-width: "65%"
+#| warning: false
+#| message: false
+```
+
+Generally, the high percentage of agreement with these descriptors shows that alumni felt welcomed while on the DataSquad. However, there is still room for improvement in areas such as feeling included while on the squad. Being fully asynchronous and dependent on Slack for communication may make it difficult to feel connected.
+
+
+## Client Assessment
+
+<span> </span>
+
+<h4 class="qblock">
+  <span>Q1. How likely are you to recommend working with the DataSquad to a colleague?</span>
+  <span>Q2. Please rate the following aspects of your experience: quality, speed, communication, ease</span>
+</h4>
+
+Outside of some open-ended follow-up questions, these two questions encompassed the entire client assessment.
+
+```{r}
+#| label: client-satisfaction-plot
+#| file: "Rcode/client_recommendation_satisfaction.R"
+#| echo: false
+#| fig-width: 14
+#| fig-height: 14
+#| fig-align: center
+#| out-width: "70%"
+#| warning: false
+#| message: false
+```
+
+With only 3 responses out of 18 having a less than 8/10 likelihood of recommending the DataSquad, clients generally view the DataSquad as beneficial. When looking at individual categories, quality is rated the highest. Interestingly, speed has a bimodal distribution (although the sample size is small) with hotspots at 5/5 and 3/5. This may suggest internal variance among DataSquad employees for reasonable product delivery time. The demands of Carleton's 10-week trimester can also make it difficult to make consistent progress on a project.
+
+The frequency of 3/5 ratings in each category implies that the DataSquad has clear room for improvement across all domains, but average ratings suggest that the squad is doing an adequate job.
+
+## Key Takeaways
+
+* Technical documentation and knowledge sharing is the most suggested area for future DataSquad development, which coincides well with the client interaction that the DataSquad provides.
+* Out of eight identified skills, teamwork is in the top three for development on the DataSquad, importance post-college, and recommendation for DataSquad focus, beating out many technical skills.
+* Time on the DataSquad simultaneously develops technical skills and soft skills.
+* The DataSquad has been consistently described as a welcoming environment by alumni.
+* Clients are likely to recommend the DataSquad despite inconsistencies in product delivery.
+
+<br>
+Notes:
+
+1. The open-ended alumni question, "Is there anything more you wish your DataSquad experience had included?" was omitted from this webpage. The necessary coding process for this question was never conducted.
+2. Feedback from clients when asked to elaborate on ratings was omitted due to repetition of the ratings themselves.
+3. The client question, "What can we do to improve your experience with the DataSquad?" was not included because the coding was never conducted due to low sample size that prevented generalization.
